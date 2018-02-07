@@ -3,6 +3,16 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     touchBoard.setup(0);
+    
+    ofxNestedFileLoader loader;
+    
+    vector<string> audioPaths = loader.load("sounds");
+    for(int i = 0; i < audioPaths.size(); i++) {
+        cout<<audioPaths[i]<<endl;
+        ofSoundPlayer player;
+        player.load(audioPaths[i]);
+        players.push_back(player);
+    }
 }
 
 //--------------------------------------------------------------

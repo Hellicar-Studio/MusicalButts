@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxGui.h"
 #include "ofxTouchBoard.h"
+#include "ofxNestedFileLoader.h"
 
 class ofApp : public ofBaseApp{
 
