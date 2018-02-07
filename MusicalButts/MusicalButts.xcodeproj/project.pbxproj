@@ -9,6 +9,164 @@
 		<string>46</string>
 		<key>objects</key>
 		<dict>
+			<key>8B4DCD9BBD6876BACA8FCDA2</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>util.h</string>
+				<key>path</key>
+				<string>../../../addons/ofxTouchBoard/src/util.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>01BC539DD4CBB8291E4E8338</key>
+			<dict>
+				<key>fileRef</key>
+				<string>BCC1F6434DE9034AA836CC97</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>BCC1F6434DE9034AA836CC97</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>util.cpp</string>
+				<key>path</key>
+				<string>../../../addons/ofxTouchBoard/src/util.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>7197BB04318785FE5F1D97DC</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Serial.h</string>
+				<key>path</key>
+				<string>../../../addons/ofxTouchBoard/src/Serial.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>69100F0D01D55C58A7591070</key>
+			<dict>
+				<key>fileRef</key>
+				<string>EBEB5E6F8C7880FD87D0AD5F</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>EBEB5E6F8C7880FD87D0AD5F</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>Serial.cpp</string>
+				<key>path</key>
+				<string>../../../addons/ofxTouchBoard/src/Serial.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>AB6DEC765D47FB93E90CE252</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxTouchBoard.h</string>
+				<key>path</key>
+				<string>../../../addons/ofxTouchBoard/src/ofxTouchBoard.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>AC512086945CB579AF85E702</key>
+			<dict>
+				<key>fileRef</key>
+				<string>71DC62934E222CDB2A449133</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>71DC62934E222CDB2A449133</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxTouchBoard.cpp</string>
+				<key>path</key>
+				<string>../../../addons/ofxTouchBoard/src/ofxTouchBoard.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>0B3C4032DFE2E7BEB809013B</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>ABFF169D2D1485071912AEE6</string>
+					<string>71DC62934E222CDB2A449133</string>
+					<string>AB6DEC765D47FB93E90CE252</string>
+					<string>EBEB5E6F8C7880FD87D0AD5F</string>
+					<string>7197BB04318785FE5F1D97DC</string>
+					<string>BCC1F6434DE9034AA836CC97</string>
+					<string>8B4DCD9BBD6876BACA8FCDA2</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>src</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>95D27BFDE6482C540FCE0748</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>0B3C4032DFE2E7BEB809013B</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>ofxTouchBoard</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>ABFF169D2D1485071912AEE6</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>defs.h</string>
+				<key>path</key>
+				<string>../../../addons/ofxTouchBoard/src/defs.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
 			<key>0A1DAC09F322AE313A40706D</key>
 			<dict>
 				<key>explicitFileType</key>
@@ -378,6 +536,7 @@
 				<key>children</key>
 				<array>
 					<string>480A780D8D0308AE4A368801</string>
+					<string>95D27BFDE6482C540FCE0748</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
@@ -531,7 +690,9 @@
 					<key>HEADER_SEARCH_PATHS</key>
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
+						<string>src</string>
 						<string>../../../addons/ofxGui/src</string>
+						<string>../../../addons/ofxTouchBoard/src</string>
 					</array>
 					<key>CONFIGURATION_BUILD_DIR</key>
 					<string>$(SRCROOT)/bin/</string>
@@ -589,7 +750,9 @@
 					<key>HEADER_SEARCH_PATHS</key>
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
+						<string>src</string>
 						<string>../../../addons/ofxGui/src</string>
+						<string>../../../addons/ofxTouchBoard/src</string>
 					</array>
 					<key>CONFIGURATION_BUILD_DIR</key>
 					<string>$(SRCROOT)/bin/</string>
@@ -654,6 +817,9 @@
 					<string>837220E80EB56CD44AD27F2A</string>
 					<string>B56FE57CC35806596D38118C</string>
 					<string>1CD33E884D9E3358252E82A1</string>
+					<string>AC512086945CB579AF85E702</string>
+					<string>69100F0D01D55C58A7591070</string>
+					<string>01BC539DD4CBB8291E4E8338</string>
 				</array>
 				<key>isa</key>
 				<string>PBXSourcesBuildPhase</string>
@@ -737,7 +903,9 @@
 					<key>HEADER_SEARCH_PATHS</key>
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
+						<string>src</string>
 						<string>../../../addons/ofxGui/src</string>
+						<string>../../../addons/ofxTouchBoard/src</string>
 					</array>
 					<key>COMBINE_HIDPI_IMAGES</key>
 					<string>YES</string>
@@ -785,7 +953,9 @@
 					<key>HEADER_SEARCH_PATHS</key>
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
+						<string>src</string>
 						<string>../../../addons/ofxGui/src</string>
+						<string>../../../addons/ofxTouchBoard/src</string>
 					</array>
 					<key>COMBINE_HIDPI_IMAGES</key>
 					<string>YES</string>

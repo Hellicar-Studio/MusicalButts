@@ -4,7 +4,7 @@ An openframeworks app using Bare conductive Touch boards to make a symphony with
 
 ## Requirements
 
-oF_0.9.8
+oF_0.9.7
 
 [ofxTouchboard](https://github.com/elaye/ofxTouchBoard)
 
