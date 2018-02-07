@@ -11,6 +11,13 @@ void ofApp::update(){
     vector<bool> touches = touchBoard.getTouchStatus();
     for(int i = 0; i < touches.size(); i++) {
         cout<<i <<": "<<touches[i]<<" ,";
+        if(touches[i]) {
+            if(!players[i%players.size()].isPlaying())
+                players[i%players.size()].Play();
+        } else {
+            if(players[i%players.size()].isPlaying())
+                players[i%players.size()].Pause();
+        }
     }
     cout<<endl;
 }

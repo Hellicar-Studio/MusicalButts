@@ -24,5 +24,6 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
     ofxTouchBoard touchBoard;
+    vector<ofSoundPlayer> players;
 		
 };
