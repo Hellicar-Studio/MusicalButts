@@ -8,6 +8,8 @@ oF_0.9.7
 
 [ofxTouchboard](https://github.com/elaye/ofxTouchBoard)
 
+[ofxNestedFileLoader](https://github.com/Bentleyj/ofxNestedFileLoader)
+
 ofxGui - included with oF
 
 ## Installation
