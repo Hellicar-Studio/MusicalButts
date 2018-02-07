@@ -1,3 +1,4 @@
 ofxGui
 ofxNestedFileLoader
 ofxTouchBoard
+ofxXmlSettings

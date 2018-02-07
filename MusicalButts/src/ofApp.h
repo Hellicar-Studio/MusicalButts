@@ -4,6 +4,7 @@
 #include "ofxGui.h"
 #include "ofxTouchBoard.h"
 #include "ofxNestedFileLoader.h"
+#include "ofxXmlSettings.h"
 
 class ofApp : public ofBaseApp{
 
@@ -26,5 +27,7 @@ class ofApp : public ofBaseApp{
     
     ofxTouchBoard touchBoard;
     vector<ofSoundPlayer> players;
+    
+    ofxXmlSettings xml;
 		
 };

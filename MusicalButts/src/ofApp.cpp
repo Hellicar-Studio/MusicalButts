@@ -13,8 +13,8 @@ void ofApp::setup(){
         player.load(audioPaths[i]);
         player.setLoop(true);
         players.push_back(player);
-        
     }
+    xml.loadFile("record.xml");
 }
 
 //--------------------------------------------------------------
@@ -25,12 +25,21 @@ void ofApp::update(){
         if(touches[i]) {
             if(!players[i].isPlaying()) {
                 players[i].play();
+                string time = ofToString(ofGetElapsedTimef());
+                cout<<"Play!"<<endl;
+                xml.addValue("Event", ofToString(i) + "*On*" + time);
+                xml.saveFile("record.xml");
             }
         } else {
-            players[i].stop();
+            if(players[i].isPlaying()) {
+                players[i].stop();
+                string time = ofToString(ofGetElapsedTimef());
+                cout<<"Stop!"<<endl;
+                xml.addValue("Event", ofToString(i) + "*Off*" + time);
+                xml.saveFile("record.xml");
+            }
         }
     }
-    cout<<endl;
 }
 
 //--------------------------------------------------------------
