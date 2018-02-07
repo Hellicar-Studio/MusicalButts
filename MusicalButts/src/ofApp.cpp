@@ -11,23 +11,28 @@ void ofApp::setup(){
         cout<<audioPaths[i]<<endl;
         ofSoundPlayer player;
         player.load(audioPaths[i]);
+        player.setLoop(true);
         players.push_back(player);
+        
     }
+    //players[0].play();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     touchBoard.update();
     vector<bool> touches = touchBoard.getTouchStatus();
-    for(int i = 0; i < touches.size(); i++) {
-        cout<<i <<": "<<touches[i]<<" ,";
+    for(int i = 0; i < players.size(); i++) {
+       //cout<<i <<": "<<touches[i]<<" ,";
         if(touches[i]) {
-            if(!players[i%players.size()].isPlaying())
-                players[i%players.size()].setPaused(false);
-                players[i%players.size()].play();
+            cout<<"Touched!";
+            if(!players[i].isPlaying()) {
+                cout<<"Play!";
+                players[i].play();
+            }
         } else {
-            if(players[i%players.size()].isPlaying())
-                players[i%players.size()].setPaused(true);
+            cout<<"Stop!";
+            players[i].stop();
         }
     }
     cout<<endl;
