@@ -2,12 +2,17 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
+    touchBoard.setup(0);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    touchBoard.update();
+    vector<bool> touches = touchBoard.getTouchStatus();
+    for(int i = 0; i < touches.size(); i++) {
+        cout<<i <<": "<<touches[i]<<" ,";
+    }
+    cout<<endl;
 }
 
 //--------------------------------------------------------------
