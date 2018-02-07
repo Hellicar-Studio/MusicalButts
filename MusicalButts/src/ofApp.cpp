@@ -13,10 +13,11 @@ void ofApp::update(){
         cout<<i <<": "<<touches[i]<<" ,";
         if(touches[i]) {
             if(!players[i%players.size()].isPlaying())
-                players[i%players.size()].Play();
+                players[i%players.size()].setPaused(false);
+                players[i%players.size()].play();
         } else {
             if(players[i%players.size()].isPlaying())
-                players[i%players.size()].Pause();
+                players[i%players.size()].setPaused(true);
         }
     }
     cout<<endl;
