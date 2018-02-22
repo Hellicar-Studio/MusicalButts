@@ -24,7 +24,6 @@ struct soundSeat {
         playing = false;
     }
     void update() {
-        players[index].setVolume(volume);
         if(playing) {
             volume += 0.1;
             volume = (volume > 1.0) ? 1.0 : volume;
@@ -37,6 +36,7 @@ struct soundSeat {
             index++;
             index %= players.size();
         }
+        players[index].setVolume(volume);
     }
     
     bool playing;
