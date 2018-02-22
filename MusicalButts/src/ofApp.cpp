@@ -35,7 +35,6 @@ void ofApp::update(){
             if(!players[i].isPlaying()) {
                 players[i].play();
                 string time = ofToString(ofGetElapsedTimef());
-                cout<<"Play!"<<endl;
                 xml.addValue("Event", ofToString(i) + "*" + ofToString(players[i].index) + "*On*" + time);
                 xml.saveFile("record.xml");
             }
@@ -43,7 +42,6 @@ void ofApp::update(){
             if(players[i].isPlaying()) {
                 players[i].stop();
                 string time = ofToString(ofGetElapsedTimef());
-                cout<<"Stop!"<<endl;
                 xml.addValue("Event", ofToString(i) + "*" + ofToString(players[i].index) + "*Off*" + time);
                 xml.saveFile("record.xml");
             }
