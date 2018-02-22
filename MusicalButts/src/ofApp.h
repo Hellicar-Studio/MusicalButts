@@ -10,7 +10,36 @@ struct soundSeat {
     soundSeat() {
         index = 0;
         volume = 0;
+        playing  = false;
     };
+    bool isPlaying() {
+        return playing;
+    }
+    void play() {
+        playing = true;
+        if(!players[index].isPlaying())
+            players[index].play();
+    }
+    void stop() {
+        playing = false;
+    }
+    void update() {
+        players[index].setVolume(volume);
+        if(playing) {
+            volume += 0.1;
+            volume = (volume > 1.0) ? 1.0 : volume;
+        } else {
+            volume -= 0.01;
+            volume = (volume < 0.0) ? 0.0 : volume;
+        }
+        if(volume == 0.0 && players[index].isPlaying()) {
+            players[index].stop();
+            index++;
+            index %= players.size();
+        }
+    }
+    
+    bool playing;
     int index;
     float volume;
     vector<ofSoundPlayer> players;
@@ -36,7 +65,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
     ofxTouchBoard touchBoard;
-    vector< vector<ofSoundPlayer> > players;
+    vector< soundSeat > players;
     
     ofxXmlSettings xml;
 		

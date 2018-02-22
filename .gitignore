@@ -1,3 +1,6 @@
+# Project Specific
+MusicalButts/bin/data/record.xml
+
 /bin/*  
 !/bin/data/   
 [Bb]uild/ 

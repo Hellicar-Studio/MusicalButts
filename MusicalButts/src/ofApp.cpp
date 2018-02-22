@@ -16,8 +16,10 @@ void ofApp::setup(){
             player.setLoop(true);
             playersTemp.push_back(player);
         }
+        soundSeat seat;
+        seat.players = playersTemp;
         loader.clearPaths();
-        players.push_back(playersTemp);
+        players.push_back(seat);
     }
 
     xml.loadFile("record.xml");
@@ -28,17 +30,18 @@ void ofApp::update(){
     touchBoard.update();
     vector<bool> touches = touchBoard.getTouchStatus();
     for(int i = 0; i < players.size(); i++) {
+        players[i].update();
         if(touches[i]) {
-            if(!players[i][0].isPlaying()) {
-                players[i][0].play();
+            if(!players[i].isPlaying()) {
+                players[i].play();
                 string time = ofToString(ofGetElapsedTimef());
                 cout<<"Play!"<<endl;
                 xml.addValue("Event", ofToString(i) + "*On*" + time);
                 xml.saveFile("record.xml");
             }
         } else {
-            if(players[i][0].isPlaying()) {
-                players[i][0].stop();
+            if(players[i].isPlaying()) {
+                players[i].stop();
                 string time = ofToString(ofGetElapsedTimef());
                 cout<<"Stop!"<<endl;
                 xml.addValue("Event", ofToString(i) + "*Off*" + time);
