@@ -6,6 +6,16 @@
 #include "ofxNestedFileLoader.h"
 #include "ofxXmlSettings.h"
 
+struct soundSeat {
+    soundSeat() {
+        index = 0;
+        volume = 0;
+    };
+    int index;
+    float volume;
+    vector<ofSoundPlayer> players;
+};
+
 class ofApp : public ofBaseApp{
 
 	public:
@@ -26,7 +36,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
     ofxTouchBoard touchBoard;
-    vector<ofSoundPlayer> players;
+    vector< vector<ofSoundPlayer> > players;
     
     ofxXmlSettings xml;
 		

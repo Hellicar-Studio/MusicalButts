@@ -6,14 +6,20 @@ void ofApp::setup(){
     
     ofxNestedFileLoader loader;
     
-    vector<string> audioPaths = loader.load("sounds");
-    for(int i = 0; i < audioPaths.size(); i++) {
-        cout<<audioPaths[i]<<endl;
-        ofSoundPlayer player;
-        player.load(audioPaths[i]);
-        player.setLoop(true);
-        players.push_back(player);
+    for(int j = 0; j < 4; j++) {
+        vector<string> audioPaths = loader.load("sounds/seat" + ofToString(j+1));
+        vector<ofSoundPlayer> playersTemp;
+        for(int i = 0; i < audioPaths.size(); i++) {
+            cout<<audioPaths[i]<<endl;
+            ofSoundPlayer player;
+            player.load(audioPaths[i]);
+            player.setLoop(true);
+            playersTemp.push_back(player);
+        }
+        loader.clearPaths();
+        players.push_back(playersTemp);
     }
+
     xml.loadFile("record.xml");
 }
 
@@ -23,16 +29,16 @@ void ofApp::update(){
     vector<bool> touches = touchBoard.getTouchStatus();
     for(int i = 0; i < players.size(); i++) {
         if(touches[i]) {
-            if(!players[i].isPlaying()) {
-                players[i].play();
+            if(!players[i][0].isPlaying()) {
+                players[i][0].play();
                 string time = ofToString(ofGetElapsedTimef());
                 cout<<"Play!"<<endl;
                 xml.addValue("Event", ofToString(i) + "*On*" + time);
                 xml.saveFile("record.xml");
             }
         } else {
-            if(players[i].isPlaying()) {
-                players[i].stop();
+            if(players[i][0].isPlaying()) {
+                players[i][0].stop();
                 string time = ofToString(ofGetElapsedTimef());
                 cout<<"Stop!"<<endl;
                 xml.addValue("Event", ofToString(i) + "*Off*" + time);
