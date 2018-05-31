@@ -59,6 +59,8 @@ void ofApp::setup(){
     gui.add(timeBetweenSwaps.set("Color Duration", 30.0, 1.0, 180.0));
     
     gui.loadFromFile(settingsPath);
+	
+	numCols = 1;
     
     ofBackground(0);
     
@@ -104,6 +106,8 @@ void ofApp::setup(){
     botCap.setMode(OF_PRIMITIVE_TRIANGLES);
     
     lastSwapTime = ofGetElapsedTimef();
+	
+	ofHideCursor();
     
     showGui = false;
 }
@@ -112,7 +116,6 @@ void ofApp::setup(){
 void ofApp::update(){
     touchBoard.update();
     vector<bool> touches = touchBoard.getTouchStatus();
-    numCols = 0;
     for(int i = 0; i < players.size(); i++) {
         players[i].update();
         if(touches[i]) {
@@ -129,6 +132,7 @@ void ofApp::update(){
                 string time = ofToString(ofGetElapsedTimef());
                 xml.addValue("Event", ofToString(i) + "*" + ofToString(players[i].index) + "*Off*" + time);
                 xml.saveFile("record.xml");
+				numCols--;
             }
         }
     }
@@ -213,6 +217,11 @@ void ofApp::keyPressed(int key){
     }
     if(key == 'g') {
         showGui = !showGui;
+		if(showGui) {
+			ofShowCursor();
+		} else {
+			ofHideCursor();
+		}
     }
 }
 
