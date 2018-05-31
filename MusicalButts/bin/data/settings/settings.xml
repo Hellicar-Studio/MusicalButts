@@ -1,0 +1,11 @@
+<group>
+	<Num_Cols>4</Num_Cols>
+	<Noise_Speed>0.1</Noise_Speed>
+	<Noise_Scale>177.5</Noise_Scale>
+	<Noise_Res>0.5</Noise_Res>
+	<Base_Col_Height>675</Base_Col_Height>
+	<Buffer_Size>128</Buffer_Size>
+	<Color_Speed>0.02</Color_Speed>
+	<Color_Duration>1.895</Color_Duration>
+<group/>
+</group>

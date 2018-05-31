@@ -5,6 +5,21 @@
 #include "ofxTouchBoard.h"
 #include "ofxNestedFileLoader.h"
 #include "ofxXmlSettings.h"
+#include "spectrumFinder.hpp"
+
+struct Column {
+public:
+    Column() {};
+    float height;
+    float baseHeight;
+    int order;
+    ofColor col;
+    ofColor nextCol;
+    void update(float noiseSpeed, float noiseScale, float noiseResolution, float colLerpSpeed) {
+        height = baseHeight + (0.5 - ofNoise(ofGetElapsedTimef() * noiseSpeed, order * noiseResolution)) * noiseScale;
+        col.lerp(nextCol, colLerpSpeed);
+    }
+};
 
 struct soundSeat {
     soundSeat() {
@@ -68,5 +83,28 @@ class ofApp : public ofBaseApp{
     vector< soundSeat > players;
     
     ofxXmlSettings xml;
+    
+    vector<ofColor> cols;
+    ofMesh topCap, botCap;
+    
+    float lastSwapTime;
+    bool showGui;
+    
+    ofxPanel gui;
+    ofParameter<int> numCols;
+    ofParameter<float> noiseSpeed;
+    ofParameter<float> noiseScale;
+    ofParameter<float> noiseResolution;
+    ofParameter<float> baseHeight;
+    ofParameter<int> bufferSize;
+    ofParameter<float> colorLerpSpeed;
+    ofParameter<float> timeBetweenSwaps;
+    
+    vector<Column> topCols;
+    vector<Column> botCols;
+    
+    ofFbo topBuffer, botBuffer, viewBuffer;
+    
+    ofShader mix, blur;
 		
 };
