@@ -7,20 +7,6 @@
 #include "ofxXmlSettings.h"
 #include "spectrumFinder.hpp"
 
-struct Column {
-public:
-    Column() {};
-    float height;
-    float baseHeight;
-    int order;
-    ofColor col;
-    ofColor nextCol;
-    void update(float noiseSpeed, float noiseScale, float noiseResolution, float colLerpSpeed) {
-        height = baseHeight + (0.5 - ofNoise(ofGetElapsedTimef() * noiseSpeed, order * noiseResolution)) * noiseScale;
-        col.lerp(nextCol, colLerpSpeed);
-    }
-};
-
 struct soundSeat {
     soundSeat() {
         index = 0;
@@ -41,7 +27,7 @@ struct soundSeat {
     void update() {
         if(playing) {
             volume += 0.1;
-            volume = (volume > 1.0) ? 1.0 : volume;
+            volume = (volume > maxVolume) ? maxVolume : volume;
         } else {
             volume -= 0.01;
             volume = (volume < 0.0) ? 0.0 : volume;
@@ -54,6 +40,7 @@ struct soundSeat {
         players[index].setVolume(volume);
     }
     
+    float maxVolume;
     bool playing;
     int index;
     float volume;
@@ -79,32 +66,21 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    ofxTouchBoard touchBoard;
-    vector< soundSeat > players;
+        ofxTouchBoard touchBoard;
+        vector< soundSeat > players;
     
-    ofxXmlSettings xml;
+        ofxXmlSettings xml;
     
-    vector<ofColor> cols;
-    ofMesh topCap, botCap;
+        vector<ofColor> cols;
+        ofMesh topCap, botCap;
     
-    float lastSwapTime;
-    bool showGui;
+        float lastSwapTime;
+        bool showGui;
     
-    ofxPanel gui;
-    ofParameter<int> numCols;
-    ofParameter<float> noiseSpeed;
-    ofParameter<float> noiseScale;
-    ofParameter<float> noiseResolution;
-    ofParameter<float> baseHeight;
-    ofParameter<int> bufferSize;
-    ofParameter<float> colorLerpSpeed;
-    ofParameter<float> timeBetweenSwaps;
-    
-    vector<Column> topCols;
-    vector<Column> botCols;
-    
-    ofFbo topBuffer, botBuffer, viewBuffer;
-    
-    ofShader mix, blur;
-		
+        ofxPanel gui;
+        ofParameter<float> volume1;
+        ofParameter<float> volume2;
+        ofParameter<float> volume3;
+        ofParameter<float> volume4;
+
 };
